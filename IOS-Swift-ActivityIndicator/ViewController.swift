@@ -10,16 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        activityIndicatorView.alpha = 0.0
+        //activityIndicatorView.sizeToFit()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func startAct(_ sender: Any) {
+        
+        activityIndicatorView.alpha = 1.0
+        activityIndicatorView.startAnimating()
     }
-
-
+    
+    @IBAction func stopAct(_ sender: Any) {
+        
+        activityIndicatorView.alpha = 0.2
+        activityIndicatorView.stopAnimating()
+        
+    }
+    
 }
 
